@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: "VT323", monospace;
+  color: #35291d;
+  background: #8eb6a0;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #8eb6a0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+/* Main world */
+
+.game-world {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #98c8cf 0%,
+      #b8d8cf 34%,
+      #91b578 35%,
+      #759d63 58%,
+      #4d7149 100%
+    );
+}
+
+/* Mountains */
+
+.game-world::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 28%;
+  height: 35%;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 30%,
+      #6f9279 30% 48%,
+      transparent 48%
+    ),
+    linear-gradient(
+      225deg,
+      transparent 30%,
+      #597c67 30% 48%,
+      transparent 48%
+    );
+
+  opacity: 0.85;
+}
+
+/* Grass */
+
+.game-world::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40%;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 25px,
+      rgba(40, 72, 42, 0.3) 26px 29px,
+      transparent 30px 55px
+    );
+
+  pointer-events: none;
+}
+
+/* Clouds */
+
+.cloud {
+  position: absolute;
+  width: 150px;
+  height: 42px;
+
+  background: #f8f0d8;
+
+  border: 5px solid #73736c;
+
+  box-shadow:
+    8px 8px 0 rgba(50, 70, 60, 0.15);
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: #f8f0d8;
+  border: 5px solid #73736c;
+  border-bottom: 0;
+}
+
+.cloud::before {
+  width: 55px;
+  height: 42px;
+  left: 25px;
+  top: -35px;
+}
+
+.cloud::after {
+  width: 40px;
+  height: 30px;
+  right: 20px;
+  top: -25px;
+}
+
+.cloud-one {
+  top: 8%;
+  left: 8%;
+}
+
+.cloud-two {
+  top: 15%;
+  right: 9%;
+  transform: scale(0.75);
+}
+
+/* Pixel typography */
+
+.pixel-title {
+  font-family: "Press Start 2P", monospace;
+  line-height: 1.6;
+}
+
+/* Main parchment cards */
+
+.pixel-panel {
+  position: relative;
+
+  background: #f0dfb5;
+
+  border: 6px solid #473524;
+
+  box-shadow:
+    8px 8px 0 #6d5438,
+    inset 0 0 0 3px #fff0c9;
+}
+
+/* Wooden cards */
+
+.wood-panel {
+  position: relative;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #9b6338 0 8px,
+      #a97042 8px 15px,
+      #8b5733 15px 21px
+    );
+
+  border: 6px solid #3f2a1c;
+
+  box-shadow:
+    8px 8px 0 rgba(45, 29, 19, 0.45),
+    inset 0 0 0 3px #c78b54;
+
+  color: #fff0ca;
+}
+
+/* Search */
+
+.pixel-input {
+  width: 100%;
+
+  background: #fff4cf;
+
+  border: 5px solid #473524;
+
+  padding: 14px 16px;
+
+  font-size: 24px;
+
+  outline: none;
+
+  box-shadow:
+    inset 4px 4px 0 #d2bd91;
+}
+
+.pixel-input:focus {
+  border-color: #70472d;
+}
+
+/* Buttons */
+
+.pixel-button {
+  background: #6f944d;
+
+  border: 5px solid #354b29;
+
+  color: white;
+
+  padding: 13px 22px;
+
+  font-family: "Press Start 2P", monospace;
+
+  font-size: 12px;
+
+  box-shadow: 6px 6px 0 #354b29;
+
+  cursor: pointer;
+
+  transition:
+    transform 80ms,
+    background 80ms;
+}
+
+.pixel-button:hover {
+  background: #7fa95a;
+
+  transform: translate(2px, 2px);
+
+  box-shadow: 4px 4px 0 #354b29;
+}
+
+.pixel-button:active {
+  transform: translate(6px, 6px);
+
+  box-shadow: none;
+}
+
+.pixel-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* Stat bars */
+
+.stat-track {
+  height: 22px;
+
+  background: #b8a47b;
+
+  border: 4px solid #473524;
+
+  padding: 2px;
+}
+
+.stat-fill {
+  height: 100%;
+
+  background: #73994e;
+
+  transition: width 500ms ease;
+}
+
+.stat-fill.gold {
+  background: #d19a38;
+}
+
+.stat-fill.blue {
+  background: #638aa0;
+}
+
+/* Repository cards */
+
+.quest {
+  background: #fff1c9;
+
+  border: 4px solid #59432c;
+
+  box-shadow: 5px 5px 0 #8b704d;
+
+  transition:
+    transform 100ms,
+    background 100ms;
+}
+
+.quest:hover {
+  transform: translateY(-3px);
+
+  background: #fff6da;
+}
+
+/* Achievement badges */
+
+.badge {
+  background: #ead29a;
+
+  border: 4px solid #59432c;
+
+  box-shadow: 4px 4px 0 #8b704d;
+}
+
+/* Avatar */
+
+.pixel-avatar {
+  border: 7px solid #473524;
+
+  box-shadow: 7px 7px 0 #795c3d;
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+  .pixel-title {
+    font-size: 16px;
+  }
+
+  .pixel-button {
+    font-size: 9px;
+    padding: 12px;
+  }
+
+  .pixel-input {
+    font-size: 20px;
+  }
+}
