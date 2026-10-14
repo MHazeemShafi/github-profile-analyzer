@@ -5,7 +5,7 @@ LvlUpGit turns a GitHub username into a compact, game-inspired profile summary. 
 ## Demo & Preview
 
 - **Repository:** https://github.com/MHazeemShafi/github-profile-analyzer
-- **Live demo:** No public live demo is currently documented.
+- **Live demo:** https://mhazeemshafi.github.io/github-profile-analyzer/
 
 ## Features
 
