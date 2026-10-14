@@ -1,75 +1,83 @@
-# React + TypeScript + Vite
+# LvlUpGit — GitHub Profile Analyzer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+LvlUpGit turns a GitHub username into a compact, game-inspired profile summary. It fetches public profile and repository information and presents a score, level, rank, and repository details in a pixel-art interface.
 
-Currently, two official plugins are available:
+## Demo & Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Repository:** https://github.com/MHazeemShafi/github-profile-analyzer
+- **Live demo:** No public live demo is currently documented.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Search public GitHub profiles by username
+- Display profile information and avatar
+- Retrieve public repositories
+- Calculate a profile score, level, and rank
+- Show repository information in a pixel-art / RPG-inspired interface
+- Provide loading and basic error states
 
-## Expanding the ESLint configuration
+## Built With
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS v4 and the Tailwind Vite plugin
+- GitHub REST API
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Requirements
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js (LTS recommended)
+- npm
+- Internet access to retrieve public GitHub profile and repository data
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Installation
 
+```bash
+git clone https://github.com/MHazeemShafi/github-profile-analyzer.git
+cd github-profile-analyzer
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Quick Start
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the development server:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev
 ```
+
+Open the local URL shown in the terminal, usually `http://localhost:5173/`.
+
+Build the project:
+
+```bash
+npm run build
+```
+
+## Configuration
+
+The app currently queries public GitHub data and does not require a user-provided API key. GitHub API rate limits may affect repeated searches. No environment variables are documented as required.
+
+## Contributing
+
+Issues and improvements are welcome.
+
+1. Open an issue describing a bug or proposed feature.
+2. Fork the repository and create a branch.
+3. Install dependencies with `npm install`.
+4. Run `npm run dev` to test the app locally.
+5. Run `npm run build` before submitting a pull request.
+
+If automated tests are added later, document and run them here; no test command is currently documented.
+
+## Credits
+
+- [React](https://react.dev/) for the UI
+- [Vite](https://vite.dev/) for development and builds
+- [Tailwind CSS](https://tailwindcss.com/) for utility styling
+- [GitHub REST API](https://docs.github.com/en/rest) for public profile and repository data
+- Built by [MHazeemShafi](https://github.com/MHazeemShafi)
+
+## License
+
+No license file is currently included. Unless a license is added, assume the source is copyrighted and ask the owner for permission before reusing or redistributing it.
